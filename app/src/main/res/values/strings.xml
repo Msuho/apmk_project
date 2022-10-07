@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">APMK</string>
+
+    <string name="naver_client_id">bOS_zaWvcEkl6Tt6PMhq</string>
+    <string name="naver_client_secret">c8hLAlBGXi</string>
+    <string name="naver_client_project">apmk</string>
+
+    <string name="kakao_app_key">3f088c856349f641ecaeeb0b85dfee68</string>
+    <string name="kakao_scheme">kakao3f088c856349f641ecaeeb0b85dfee68</string>
+
+
+    <string name="facebook_app_id">525855199281444</string>
+    <string name="fb_login_protocol_scheme">fb525855199281444</string>
+    <string name="facebook_client_token">e8097439acd9d110b6e9916fc7d0453b</string>
+
+    <string name="open">open</string>
+    <string name="closed">closed</string>
+
+    <string name="login_text">잠든 사이에도 자동으로 \n 포인트를 모아주는 돈벼락 어플을\n 경험해보세요</string>
+
+</resources>

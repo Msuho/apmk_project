@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.company.benefit">
+    <!-- 인터넷 사용 권한 설정 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".GlobalApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".view.IntroActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.ListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.WebViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.AdPopcornActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.LoginActivity"
+            android:exported="false">
+
+        </activity>
+        <!-- facebook login start -->
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+        <meta-data
+            android:name="com.facebook.sdk.ClientToken"
+            android:value="@string/facebook_client_token" />
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+        <!-- facebook login end -->
+        <!-- kakao login start -->
+        <activity
+            android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <!-- Redirect URI: "kakao${NATIVE_APP_KEY}://oauth" -->
+                <data
+                    android:host="oauth"
+                    android:scheme="@string/kakao_scheme" />
+            </intent-filter>
+        </activity>
+        <!-- kakao login end -->
+
+        <!-- adPopcorn end -->
+        <meta-data
+            android:name="adpopcorn_app_key"
+            android:value="346336210" />
+        <meta-data
+            android:name="adpopcorn_hash_key"
+            android:value="a8c6d75107324df6" />
+        <meta-data
+            android:name="igaworks_app_key"
+            android:value="346336210" />
+        <meta-data
+            android:name="igaworks_hash_key"
+            android:value="a8c6d75107324df6" />
+
+        <activity
+            android:name="com.igaworks.adpopcorn.activity.ApOfferWallActivity_NT"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name="com.igaworks.adpopcorn.activity.ApVideoAdActivity"
+            android:theme="@android:style/Theme.NoTitleBar" /> <!-- 애드팝콘 어드민에서 리워드서버 연동방식을 애드팝콘 서버로 선택한 경우에는 "client"로 설정하여야 하며 리워드지급처리를 위한 추가 api를 연동하여야 합니다. -->
+        <meta-data
+            android:name="adpopcorn_reward_server_type"
+            android:value="client" /> <!-- 리워드 콜백을 클라이언트에서 처리하기 위해 리워드서버 연동 방식을 수정합니다. -->
+        <!-- <meta-data android:name="igaworks_reward_server_type" android:value="client"/> -->
+        <!-- adPopcorn login end -->
+        <activity android:name=".view.MainActivity" />
+    </application>
+
+</manifest>
